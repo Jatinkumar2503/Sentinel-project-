@@ -1,0 +1,64 @@
+{
+  "scraper_name": "sentinel_custom_competitor_laptop_scraper",
+  "version": "1.0.0",
+  "author": "Sentinel AI Platform",
+  "platform": "Bright Data Scraper Studio",
+  "target_category": "E-Commerce / Consumer Electronics",
+  "fields": [
+    {
+      "name": "product_name",
+      "type": "string",
+      "required": true,
+      "description": "Full product title",
+      "default_selector": ".product-title, [data-testid='product-title'], h2.title"
+    },
+    {
+      "name": "product_url",
+      "type": "url",
+      "required": true,
+      "description": "Canonical product page URL",
+      "default_selector": "a.product-link, [data-testid='product-link']"
+    },
+    {
+      "name": "price",
+      "type": "number",
+      "required": true,
+      "description": "Current selling price in INR or local currency",
+      "default_selector": ".price, [data-testid='price'], .amount"
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "required": false,
+      "description": "ISO currency code (e.g. INR, USD)",
+      "default_selector": ".currency, [data-testid='currency']"
+    },
+    {
+      "name": "availability",
+      "type": "string",
+      "required": true,
+      "description": "Stock status (in_stock, out_of_stock)",
+      "default_selector": ".stock-status, [data-testid='stock']"
+    },
+    {
+      "name": "discount",
+      "type": "number",
+      "required": false,
+      "description": "Discount percentage (0-100)",
+      "default_selector": ".discount-tag, [data-testid='discount']"
+    },
+    {
+      "name": "rating",
+      "type": "number",
+      "required": false,
+      "description": "Customer rating (0-5.0)",
+      "default_selector": ".rating-value, [data-testid='rating']"
+    },
+    {
+      "name": "scraped_at",
+      "type": "datetime",
+      "required": true,
+      "description": "ISO timestamp of extraction"
+    }
+  ]
+}
