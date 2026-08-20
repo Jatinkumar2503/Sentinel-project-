@@ -195,7 +195,7 @@ export default function App() {
       <div className="w-full max-w-[1800px] mx-auto flex flex-col gap-10">
         
         {/* Top Header */}
-        <div>
+        <div className="shrink-0 w-full">
           <Header
             isWsConnected={isWsConnected}
             onQuickTriggerDemo={handleQuickTriggerDemo}
@@ -204,12 +204,12 @@ export default function App() {
         </div>
 
         {/* Hero Explanation Banner */}
-        <div>
+        <div className="shrink-0 w-full">
           <HeroExplanation />
         </div>
 
         {/* Top 4 KPI Metric Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 w-full">
+        <div className="shrink-0 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 w-full">
           <MetricCard
             title="Studio Collectors"
             value={summary.total_scrapers}
@@ -245,10 +245,10 @@ export default function App() {
         </div>
 
         {/* Main Grid: Self-Healing Timeline & Scraper Health Radar */}
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 items-start w-full">
+        <div className="shrink-0 grid grid-cols-1 xl:grid-cols-12 gap-10 items-start w-full">
           
           {/* Left Column (7 cols): Self-Healing Timeline & DOM Diff */}
-          <div className="xl:col-span-7 flex flex-col gap-10 w-full">
+          <div className="xl:col-span-7 flex flex-col gap-10 w-full shrink-0">
             <SelfHealingTimeline
               timelineEvents={liveTimeline}
               isHealing={isHealing}
@@ -264,7 +264,7 @@ export default function App() {
           </div>
 
           {/* Right Column (5 cols): Health Scoring Radar & Competitive Alerts Feed */}
-          <div className="xl:col-span-5 flex flex-col gap-10 w-full">
+          <div className="xl:col-span-5 flex flex-col gap-10 w-full shrink-0">
             <HealthRadar
               healthScore={healthData.health_score}
               breakdown={healthData.breakdown}
@@ -275,7 +275,7 @@ export default function App() {
         </div>
 
         {/* Competitor Collectors Table */}
-        <div>
+        <div className="shrink-0 w-full">
           <CompetitorMatrix
             scrapers={scrapers}
             onRunScraper={handleRunScraper}
@@ -285,7 +285,7 @@ export default function App() {
         </div>
 
         {/* Chaos Demo Lab Interactive Panel */}
-        <div>
+        <div className="shrink-0 w-full">
           <ChaosLabPanel
             onSwitchVersion={handleSwitchVersion}
             onInjectPriceDrop={handleInjectPriceDrop}
