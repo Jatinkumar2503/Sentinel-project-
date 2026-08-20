@@ -34,7 +34,7 @@ export default function HeroExplanation() {
   ];
 
   return (
-    <div className="w-full block">
+    <div className="w-full block mb-12">
       <div className="card-porcelain p-8 bg-white border border-[#111827]/10 w-full shadow-md block">
         {/* Header Banner Title */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-[#111827]/10">
