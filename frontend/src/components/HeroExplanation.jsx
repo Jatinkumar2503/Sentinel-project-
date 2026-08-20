@@ -34,47 +34,49 @@ export default function HeroExplanation() {
   ];
 
   return (
-    <div className="card-porcelain p-8 mb-10 bg-white border border-[#111827]/10 w-full shadow-md">
-      {/* Header Banner Title */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-6 border-b border-[#111827]/10">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#111827] text-white text-[11px] font-mono font-bold uppercase tracking-widest mb-2">
-            <span>HOW SENTINEL AI WORKS</span>
-          </div>
-          <h2 className="text-2xl font-extrabold font-heading text-[#111827] tracking-tight">
-            The Autonomous Self-Healing Pipeline
-          </h2>
-        </div>
-        <p className="text-sm text-[#4B5563] font-sans font-medium max-w-xl leading-relaxed">
-          Traditional scrapers silently fail when website layouts change. Sentinel AI monitors extraction health, repairs broken CSS/XPath selectors automatically using Bright Data, and delivers uninterrupted competitive market intelligence.
-        </p>
-      </div>
-
-      {/* 4 Interactive Flow Steps */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-        {steps.map((step, idx) => {
-          const IconComponent = step.icon;
-          return (
-            <div key={idx} className="relative p-6 rounded-2xl bg-[#FAF8F5] border border-[#111827]/10 flex flex-col justify-between hover:border-[#111827]/30 hover:bg-white transition-all shadow-2xs">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono font-extrabold text-[#9CA3AF] tracking-wider">{step.num}</span>
-                  <div className={`p-3 rounded-xl border flex items-center justify-center shrink-0 ${step.color}`} style={{ width: '42px', height: '42px' }}>
-                    <IconComponent size={20} style={{ width: '20px', height: '20px' }} />
-                  </div>
-                </div>
-                <h3 className="text-base font-bold font-sans text-[#111827] mb-2">{step.title}</h3>
-                <p className="text-xs text-[#4B5563] font-sans font-medium leading-relaxed">{step.desc}</p>
-              </div>
-
-              {idx < steps.length - 1 && (
-                <div className="hidden xl:block absolute -right-3.5 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-white border border-[#111827]/15 text-[#6B7280] shadow-sm">
-                  <ArrowRight size={14} style={{ width: '14px', height: '14px' }} />
-                </div>
-              )}
+    <div className="w-full block">
+      <div className="card-porcelain p-8 bg-white border border-[#111827]/10 w-full shadow-md flex flex-col justify-between">
+        {/* Header Banner Title */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-[#111827]/10">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#111827] text-white text-[11px] font-mono font-bold uppercase tracking-widest mb-2">
+              <span>HOW SENTINEL AI WORKS</span>
             </div>
-          );
-        })}
+            <h2 className="text-2xl font-extrabold font-heading text-[#111827] tracking-tight">
+              The Autonomous Self-Healing Pipeline
+            </h2>
+          </div>
+          <p className="text-sm text-[#4B5563] font-sans font-medium max-w-xl leading-relaxed">
+            Traditional scrapers silently fail when website layouts change. Sentinel AI monitors extraction health, repairs broken CSS/XPath selectors automatically using Bright Data, and delivers uninterrupted competitive market intelligence.
+          </p>
+        </div>
+
+        {/* 4 Interactive Flow Steps */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full pb-2">
+          {steps.map((step, idx) => {
+            const IconComponent = step.icon;
+            return (
+              <div key={idx} className="relative p-6 rounded-2xl bg-[#FAF8F5] border border-[#111827]/10 flex flex-col justify-between hover:border-[#111827]/30 hover:bg-white transition-all shadow-2xs h-full min-h-[160px]">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-mono font-extrabold text-[#9CA3AF] tracking-wider">{step.num}</span>
+                    <div className={`p-3 rounded-xl border flex items-center justify-center shrink-0 ${step.color}`} style={{ width: '42px', height: '42px' }}>
+                      <IconComponent size={20} style={{ width: '20px', height: '20px' }} />
+                    </div>
+                  </div>
+                  <h3 className="text-base font-bold font-sans text-[#111827] mb-2">{step.title}</h3>
+                  <p className="text-xs text-[#4B5563] font-sans font-medium leading-relaxed">{step.desc}</p>
+                </div>
+
+                {idx < steps.length - 1 && (
+                  <div className="hidden xl:block absolute -right-3.5 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-white border border-[#111827]/15 text-[#6B7280] shadow-sm">
+                    <ArrowRight size={14} style={{ width: '14px', height: '14px' }} />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
