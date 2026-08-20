@@ -33,15 +33,15 @@ export default function MetricCard({ title, value, subtitle, iconType = 'cpu', c
   };
 
   return (
-    <div className="card-porcelain p-6 bg-white border border-[#111827]/10 flex flex-col justify-between h-full min-h-[150px] shadow-xs hover:border-[#111827]/30 transition-all">
-      <div className="flex items-start justify-between gap-4 mb-4">
-        <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#6B7280] leading-tight block">{title}</span>
+    <div className="card-porcelain p-6 bg-white border border-[#111827]/10 flex flex-col justify-between h-full min-h-[160px] shadow-xs hover:border-[#111827]/30 transition-all">
+      <div className="flex items-start justify-between gap-4 mb-4 pt-1">
+        <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#6B7280] leading-normal block">{title}</span>
         <div className={`p-3 rounded-xl border flex items-center justify-center shrink-0 ${colorVariants[color] || colorVariants.dark}`} style={{ width: '42px', height: '42px' }}>
           {renderIcon()}
         </div>
       </div>
 
-      <div>
+      <div className="pb-1">
         <div className="flex items-baseline gap-3 flex-wrap mb-1">
           <span className="text-3xl font-extrabold text-[#111827] font-mono tracking-tight">{value}</span>
           {trend && (
