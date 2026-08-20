@@ -22,7 +22,6 @@ import {
   resetDemoLab
 } from './services/api';
 import { WebSocketService } from './services/websocket';
-import { ShieldCheck, Activity, Cpu, Bell, Layers, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [summary, setSummary] = useState({
@@ -59,7 +58,6 @@ export default function App() {
   const [runningScraperId, setRunningScraperId] = useState(null);
   const [isRunningDemo, setIsRunningDemo] = useState(false);
   const [activeVersion, setActiveVersion] = useState('v1');
-  const [activeTab, setActiveTab] = useState('overview');
 
   // Load Initial Telemetry
   const loadData = async () => {
@@ -193,8 +191,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F6F0] text-[#111827] px-4 py-6 sm:px-8 sm:py-8 font-sans">
-      <div className="max-w-7xl mx-auto space-y-8">
+    <div className="min-h-screen bg-[#F8F6F0] text-[#111827] px-4 py-8 sm:px-8 lg:px-12 font-sans w-full">
+      <div className="w-full max-w-[1800px] mx-auto space-y-10">
         
         {/* Top Header */}
         <Header
@@ -206,8 +204,8 @@ export default function App() {
         {/* Hero Explanation Banner */}
         <HeroExplanation />
 
-        {/* Top Metric Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* Top 4 KPI Metric Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full">
           <MetricCard
             title="Studio Collectors"
             value={summary.total_scrapers}
@@ -242,11 +240,11 @@ export default function App() {
           />
         </div>
 
-        {/* Main Grid: Self-Healing Timeline & Health Scoring */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Main Grid: Self-Healing Timeline & Scraper Health Radar */}
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start w-full">
           
-          {/* Left Column (8 cols): Self-Healing Timeline & DOM Diff */}
-          <div className="lg:col-span-7 space-y-8">
+          {/* Left Column (7 cols): Self-Healing Timeline & DOM Diff */}
+          <div className="xl:col-span-7 space-y-8 w-full">
             <SelfHealingTimeline
               timelineEvents={liveTimeline}
               isHealing={isHealing}
@@ -261,8 +259,8 @@ export default function App() {
             />
           </div>
 
-          {/* Right Column (5 cols): Scraper Health Scoring & Competitive Delta Feed */}
-          <div className="lg:col-span-5 space-y-8">
+          {/* Right Column (5 cols): Health Scoring Radar & Competitive Alerts Feed */}
+          <div className="xl:col-span-5 space-y-8 w-full">
             <HealthRadar
               healthScore={healthData.health_score}
               breakdown={healthData.breakdown}

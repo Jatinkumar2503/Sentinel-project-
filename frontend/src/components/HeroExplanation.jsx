@@ -13,7 +13,7 @@ export default function HeroExplanation() {
     {
       num: '02',
       title: 'Detect Selector Failure',
-      desc: 'When competitor websites redesign or change class names (e.g. .price fails), Health score drops.',
+      desc: 'When competitor websites redesign or change class names (e.g. .price fails), extraction health drops.',
       icon: AlertTriangle,
       color: 'bg-[#FFE4E6] text-[#E11D48] border-[#FDA4AF]',
     },
@@ -27,47 +27,49 @@ export default function HeroExplanation() {
     {
       num: '04',
       title: 'Deliver Price Intel',
-      desc: 'Validated records trigger real-time price drop, discount spike, and inventory stockout business alerts.',
+      desc: 'Validated records trigger real-time price drop, discount surge, and inventory stockout business alerts.',
       icon: TrendingDown,
       color: 'bg-[#D1FAE5] text-[#059669] border-[#6EE7B7]',
     },
   ];
 
   return (
-    <div className="card-porcelain p-6 mb-8 bg-gradient-to-r from-white via-[#FAF8F5] to-white border border-[#111827]/10">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#111827]/10">
+    <div className="card-porcelain p-8 mb-10 bg-white border border-[#111827]/10 w-full shadow-md">
+      {/* Header Banner Title */}
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-6 border-b border-[#111827]/10">
         <div>
-          <span className="text-[10px] font-mono font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-[#111827] text-white">
-            HOW SENTINEL AI WORKS
-          </span>
-          <h2 className="text-xl font-extrabold font-heading text-[#111827] mt-2">
-            The Autonomous Self-Healing Pipeline Explained
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#111827] text-white text-[11px] font-mono font-bold uppercase tracking-widest mb-2">
+            <span>HOW SENTINEL AI WORKS</span>
+          </div>
+          <h2 className="text-2xl font-extrabold font-heading text-[#111827] tracking-tight">
+            The Autonomous Self-Healing Pipeline
           </h2>
         </div>
-        <p className="text-xs text-[#4B5563] font-sans font-medium max-w-md">
-          Traditional scrapers silently fail when website layouts change. Sentinel AI monitors extraction health, repairs selectors automatically using Bright Data, and delivers uninterrupted competitive intel.
+        <p className="text-sm text-[#4B5563] font-sans font-medium max-w-xl leading-relaxed">
+          Traditional scrapers silently fail when website layouts change. Sentinel AI monitors extraction health, repairs broken CSS/XPath selectors automatically using Bright Data, and delivers uninterrupted competitive market intelligence.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* 4 Interactive Flow Steps */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {steps.map((step, idx) => {
           const IconComponent = step.icon;
           return (
-            <div key={idx} className="relative p-5 rounded-2xl bg-white border border-[#111827]/10 flex flex-col justify-between shadow-xs hover:border-[#111827]/30 transition-all">
+            <div key={idx} className="relative p-6 rounded-2xl bg-[#FAF8F5] border border-[#111827]/10 flex flex-col justify-between hover:border-[#111827]/30 hover:bg-white transition-all shadow-2xs">
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono font-extrabold text-[#9CA3AF]">{step.num}</span>
-                  <div className={`p-2.5 rounded-xl border flex items-center justify-center ${step.color}`} style={{ width: '38px', height: '38px' }}>
-                    <IconComponent size={18} style={{ width: '18px', height: '18px' }} />
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-mono font-extrabold text-[#9CA3AF] tracking-wider">{step.num}</span>
+                  <div className={`p-3 rounded-xl border flex items-center justify-center shrink-0 ${step.color}`} style={{ width: '42px', height: '42px' }}>
+                    <IconComponent size={20} style={{ width: '20px', height: '20px' }} />
                   </div>
                 </div>
-                <h3 className="text-sm font-bold font-sans text-[#111827] mb-1">{step.title}</h3>
+                <h3 className="text-base font-bold font-sans text-[#111827] mb-2">{step.title}</h3>
                 <p className="text-xs text-[#4B5563] font-sans font-medium leading-relaxed">{step.desc}</p>
               </div>
 
               {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 z-10 p-1 rounded-full bg-white border border-[#111827]/15 text-[#6B7280] shadow-xs">
-                  <ArrowRight size={12} style={{ width: '12px', height: '12px' }} />
+                <div className="hidden xl:block absolute -right-3.5 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-white border border-[#111827]/15 text-[#6B7280] shadow-sm">
+                  <ArrowRight size={14} style={{ width: '14px', height: '14px' }} />
                 </div>
               )}
             </div>

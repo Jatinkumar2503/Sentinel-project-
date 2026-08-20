@@ -20,37 +20,37 @@ export default function MetricCard({ title, value, subtitle, iconType = 'cpu', c
   const renderIcon = () => {
     switch (iconType) {
       case 'cpu':
-        return <Cpu size={18} style={{ width: '18px', height: '18px' }} />;
+        return <Cpu size={20} style={{ width: '20px', height: '20px' }} />;
       case 'activity':
-        return <Activity size={18} style={{ width: '18px', height: '18px' }} />;
+        return <Activity size={20} style={{ width: '20px', height: '20px' }} />;
       case 'shield':
-        return <ShieldCheck size={18} style={{ width: '18px', height: '18px' }} />;
+        return <ShieldCheck size={20} style={{ width: '20px', height: '20px' }} />;
       case 'bell':
-        return <Bell size={18} style={{ width: '18px', height: '18px' }} />;
+        return <Bell size={20} style={{ width: '20px', height: '20px' }} />;
       default:
-        return <Activity size={18} style={{ width: '18px', height: '18px' }} />;
+        return <Activity size={20} style={{ width: '20px', height: '20px' }} />;
     }
   };
 
   return (
-    <div className="card-porcelain p-6 bg-white border border-[#111827]/10 flex flex-col justify-between h-full min-h-[140px]">
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#6B7280] block leading-tight">{title}</span>
-        <div className={`p-2.5 rounded-xl border flex items-center justify-center shrink-0 ${colorVariants[color] || colorVariants.dark}`} style={{ width: '38px', height: '38px' }}>
+    <div className="card-porcelain p-6 bg-white border border-[#111827]/10 flex flex-col justify-between h-full min-h-[150px] shadow-xs hover:border-[#111827]/30 transition-all">
+      <div className="flex items-start justify-between gap-4 mb-4">
+        <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#6B7280] leading-tight block">{title}</span>
+        <div className={`p-3 rounded-xl border flex items-center justify-center shrink-0 ${colorVariants[color] || colorVariants.dark}`} style={{ width: '42px', height: '42px' }}>
           {renderIcon()}
         </div>
       </div>
 
       <div>
-        <div className="flex items-baseline gap-2 flex-wrap">
-          <span className="text-2xl font-extrabold text-[#111827] font-mono tracking-tight">{value}</span>
+        <div className="flex items-baseline gap-3 flex-wrap mb-1">
+          <span className="text-3xl font-extrabold text-[#111827] font-mono tracking-tight">{value}</span>
           {trend && (
-            <span className={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border whitespace-nowrap ${badgeVariants[color] || badgeVariants.dark}`}>
+            <span className={`text-[11px] font-mono font-bold px-3 py-0.5 rounded-full border whitespace-nowrap ${badgeVariants[color] || badgeVariants.dark}`}>
               {trend}
             </span>
           )}
         </div>
-        {subtitle && <p className="text-xs font-sans text-[#4B5563] font-medium mt-1.5 leading-snug">{subtitle}</p>}
+        {subtitle && <p className="text-xs font-sans text-[#4B5563] font-medium leading-normal">{subtitle}</p>}
       </div>
     </div>
   );
