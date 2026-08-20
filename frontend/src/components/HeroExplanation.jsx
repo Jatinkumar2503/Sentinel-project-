@@ -35,7 +35,7 @@ export default function HeroExplanation() {
 
   return (
     <div className="w-full block">
-      <div className="card-porcelain p-8 bg-white border border-[#111827]/10 w-full shadow-md flex flex-col justify-between">
+      <div className="card-porcelain p-8 bg-white border border-[#111827]/10 w-full shadow-md block">
         {/* Header Banner Title */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-[#111827]/10">
           <div>
@@ -52,11 +52,11 @@ export default function HeroExplanation() {
         </div>
 
         {/* 4 Interactive Flow Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full pb-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full">
           {steps.map((step, idx) => {
             const IconComponent = step.icon;
             return (
-              <div key={idx} className="relative p-6 rounded-2xl bg-[#FAF8F5] border border-[#111827]/10 flex flex-col justify-between hover:border-[#111827]/30 hover:bg-white transition-all shadow-2xs h-full min-h-[160px]">
+              <div key={idx} className="relative p-6 rounded-2xl bg-[#FAF8F5] border border-[#111827]/10 flex flex-col justify-between hover:border-[#111827]/30 hover:bg-white transition-all shadow-2xs">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-mono font-extrabold text-[#9CA3AF] tracking-wider">{step.num}</span>
