@@ -191,21 +191,25 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F6F0] text-[#111827] px-4 py-8 sm:px-8 lg:px-12 font-sans w-full">
-      <div className="w-full max-w-[1800px] mx-auto space-y-10">
+    <div className="min-h-screen bg-[#F8F6F0] text-[#111827] px-6 py-8 md:px-12 md:py-10 font-sans w-full">
+      <div className="w-full max-w-[1800px] mx-auto flex flex-col gap-10">
         
         {/* Top Header */}
-        <Header
-          isWsConnected={isWsConnected}
-          onQuickTriggerDemo={handleQuickTriggerDemo}
-          isRunningDemo={isRunningDemo}
-        />
+        <div>
+          <Header
+            isWsConnected={isWsConnected}
+            onQuickTriggerDemo={handleQuickTriggerDemo}
+            isRunningDemo={isRunningDemo}
+          />
+        </div>
 
         {/* Hero Explanation Banner */}
-        <HeroExplanation />
+        <div>
+          <HeroExplanation />
+        </div>
 
         {/* Top 4 KPI Metric Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 w-full">
           <MetricCard
             title="Studio Collectors"
             value={summary.total_scrapers}
@@ -241,10 +245,10 @@ export default function App() {
         </div>
 
         {/* Main Grid: Self-Healing Timeline & Scraper Health Radar */}
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start w-full">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 items-start w-full">
           
           {/* Left Column (7 cols): Self-Healing Timeline & DOM Diff */}
-          <div className="xl:col-span-7 space-y-8 w-full">
+          <div className="xl:col-span-7 flex flex-col gap-10 w-full">
             <SelfHealingTimeline
               timelineEvents={liveTimeline}
               isHealing={isHealing}
@@ -260,7 +264,7 @@ export default function App() {
           </div>
 
           {/* Right Column (5 cols): Health Scoring Radar & Competitive Alerts Feed */}
-          <div className="xl:col-span-5 space-y-8 w-full">
+          <div className="xl:col-span-5 flex flex-col gap-10 w-full">
             <HealthRadar
               healthScore={healthData.health_score}
               breakdown={healthData.breakdown}
@@ -271,20 +275,24 @@ export default function App() {
         </div>
 
         {/* Competitor Collectors Table */}
-        <CompetitorMatrix
-          scrapers={scrapers}
-          onRunScraper={handleRunScraper}
-          onHealScraper={handleHealScraper}
-          runningScraperId={runningScraperId}
-        />
+        <div>
+          <CompetitorMatrix
+            scrapers={scrapers}
+            onRunScraper={handleRunScraper}
+            onHealScraper={handleHealScraper}
+            runningScraperId={runningScraperId}
+          />
+        </div>
 
         {/* Chaos Demo Lab Interactive Panel */}
-        <ChaosLabPanel
-          onSwitchVersion={handleSwitchVersion}
-          onInjectPriceDrop={handleInjectPriceDrop}
-          onResetDemo={handleResetDemo}
-          activeVersion={activeVersion}
-        />
+        <div>
+          <ChaosLabPanel
+            onSwitchVersion={handleSwitchVersion}
+            onInjectPriceDrop={handleInjectPriceDrop}
+            onResetDemo={handleResetDemo}
+            activeVersion={activeVersion}
+          />
+        </div>
 
       </div>
     </div>
