@@ -34,10 +34,10 @@ export default function HeroExplanation() {
   ];
 
   return (
-    <div className="w-full block mb-12">
-      <div className="card-porcelain p-8 bg-white border border-[#111827]/10 w-full shadow-md block">
+    <div className="w-full block">
+      <div className="card-porcelain p-8 bg-white border border-[#111827]/10 w-full shadow-md flex flex-col gap-8">
         {/* Header Banner Title */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-[#111827]/10">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#111827]/10 shrink-0">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#111827] text-white text-[11px] font-mono font-bold uppercase tracking-widest mb-2">
               <span>HOW SENTINEL AI WORKS</span>
@@ -52,11 +52,11 @@ export default function HeroExplanation() {
         </div>
 
         {/* 4 Interactive Flow Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full shrink-0">
           {steps.map((step, idx) => {
             const IconComponent = step.icon;
             return (
-              <div key={idx} className="relative p-6 rounded-2xl bg-[#FAF8F5] border border-[#111827]/10 flex flex-col justify-between hover:border-[#111827]/30 hover:bg-white transition-all shadow-2xs">
+              <div key={idx} className="relative p-6 rounded-2xl bg-[#FAF8F5] border border-[#111827]/10 flex flex-col justify-between hover:border-[#111827]/30 hover:bg-white transition-all shadow-2xs h-full min-h-[150px]">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-mono font-extrabold text-[#9CA3AF] tracking-wider">{step.num}</span>
